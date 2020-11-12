@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+nav {
+  display: flex;
+  background: #854b44;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+  color: rgb(204, 203, 201);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5000;
+}
+.title {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+.logo img {
+  width: 40px;
+  border-radius: 10px;
+}
+.navlinks {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+.navlinks li {
+  list-style: none;
+}
+.navlinks a {
+  text-decoration: none;
+  color: rgb(204, 203, 201);
+  letter-spacing: 5px;
+  font-size: px;
+}
+
+.burger div {
+  width: 25px;
+  height: 4px;
+  margin: 3px;
+  border-radius: 2px;
+  background-color: rgb(204, 203, 201);
+  transition: all 0.3s ease;
+}
+
+.burger {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .navlinks {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .navlinks {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    background: #854b44;
+    top: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+  }
+  .navlinks li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+}
+.navactive {
+  transform: translateX(0%);
+}
+
+@keyframes navlinkfade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .one {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.toggle .two {
+  opacity: 0;
+}
+
+.toggle .three {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+
+.slidecontainer {
+  width: 80%;
+  height: 80vh;
+  margin: auto;
+  position: relative;
+  top: 50px;
+  border: 2px solid black;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  hight: 500px;
+}
+
+.slides img {
+  top: 8vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  min-height: 50vh;
+}
